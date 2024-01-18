@@ -1,0 +1,71 @@
+// Use JS to create html elements
+<nav class="navbar">
+    <h1 class="nav-brand">Countries</h1>
+</nav>
+
+<main class="container">
+    <form>
+        <label>Choose a country</label>
+        <select id="countries-dropdown"></select>
+    </form>
+</main>
+
+index.js
+import {getDropdown} from "./countries.js";
+
+const countries = ["Netherlands", "Japan", "Mongolia"];
+
+const html = getDropdown(countries);
+
+const select = document.querySelector("#countries-dropdown");
+select.innerHTML = html;
+
+countries.js
+/**
+ * @param {string[]} countries
+ */
+export function getDropdown(countries) {
+    let html = `<option value="">Please select</option>`;
+    countries.forEach(function(country) {
+        html += `<option value="${country.toLowerCase()}">${country}</option>`;
+    });
+    return html;
+}
+
+// **********************************************************************************
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
